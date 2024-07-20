@@ -25,6 +25,10 @@ body {
     border-radius: 10px;
 }
 
+.sidebar.expanded {
+    width: 160px;
+}
+
 .logo {
     display: block;
     margin: auto;
@@ -45,6 +49,17 @@ ul {
 .btn {
     display: block;
     margin: auto;
+}
+.nav-links .link li .btn span {
+    margin-left: 10px;
+}
+
+.nav-links .link li.active .btn {
+    background-color: #1A1F16;
+    color: #ffffff;
+}
+.sidebar.expanded .nav.links .link li .btn span {
+    display: inline-block;
 }
 
 .bottom-sidebar .btn {
