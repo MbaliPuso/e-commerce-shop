@@ -46,7 +46,5 @@
 @media (max-width: 991px) {
     .card {
         max-width: 60%;
-        display: flex;
-        justify-content: center;
     }
 }
