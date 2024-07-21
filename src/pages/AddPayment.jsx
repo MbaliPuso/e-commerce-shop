@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/AddPayment.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
@@ -20,12 +21,20 @@ const AddPayment = () => {
         e.preventDefault();
         alert("Card Added!");
     };
-    
+
     return (
         <>
             <div className="container">
-                <div className="container select-card">Select a card</div>
+                <div className="container select-card">
+                    <div className="select-card-heading">
+                        SELECT A CARD
+                    </div>
+                    
+                </div>
                 <div className="container add-card">
+                    <div className="new-card-heading">
+                        ADD NEW CARD
+                    </div>
                     <form className='add-card-form' onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Cardholder Name</label>
@@ -42,13 +51,14 @@ const AddPayment = () => {
                                     <input type="text" name='expiryDate' placeholder='MM/YYYY' value={formData.expiryDate} onChange={handleChange} className='form-control' required />
                                 </div>
                                 <div className="col-3">
-                                <label htmlFor="cvc">Expiry Date</label>
-                                <input type="date" name='cvc' placeholder='123' value={formData.cvc} onChange={handleChange} className='form-control' required />
+                                <label htmlFor="cvc">CVC</label>
+                                <input type="number" name='cvc' placeholder='123' value={formData.cvc} onChange={handleChange} className='form-control' required />
                                 </div>
                             </div>
                         </div>
                         <div className="form-check">
                             <input type="checkbox" name="defaultPayment" value={formData.defaultPayment} onChange={handleChange} className='form-check-input' />
+                            <label htmlFor="defaultPayment">Save this as your default payment method</label>
                         </div>
                         <button type="submit" className='btn btn-dark'>Add Payment Method</button>
                         <div className="row">
