@@ -1,5 +1,9 @@
 import React from 'react';
+import '../styles/Dashboard.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/Sidebar.css';
+import '../styles/ProductList.css';
+import '../styles/Sidebag.css';
 import Sidebar from '../components/Sidebar';
 import ProductList from '../components/ProductList';
 import Sidebag from '../components/Sidebag';
@@ -7,19 +11,9 @@ import Sidebag from '../components/Sidebag';
 const Dashboard = () => {
     return (
         <>
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-1'>
-                        <Sidebar />
-                    </div>
-                    <div className='col-9'>
-                        <ProductList />
-                    </div>
-                    <div className='col-2'>
-                        <Sidebag />
-                    </div>
-                </div>
-            </div>
+            <Sidebar />
+            <ProductList />
+            <Sidebag />
         </>
     );
 };

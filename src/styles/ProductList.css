@@ -1,3 +1,8 @@
+.product-list {
+    display: flex;
+    flex: 1;
+}
+
 .search-label {
     font-size: 16px;
     font-weight: 400;
@@ -46,7 +51,5 @@
 @media (max-width: 991px) {
     .card {
         max-width: 60%;
-        display: flex;
-        justify-content: center;
     }
 }
