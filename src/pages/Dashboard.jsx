@@ -14,6 +14,7 @@ const Dashboard = () => {
             <Sidebar />
             <ProductList />
             <Sidebag />
+        
         </>
     );
 };

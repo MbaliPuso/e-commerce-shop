@@ -1,4 +1,7 @@
 .sidebag {
-    display: flex;
-    flex: 0 0 20%;
+    display: absolute;
+    
+
+    border: 1px red solid;
+
 }
