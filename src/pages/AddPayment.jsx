@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCard } from '../redux/actions/cardActions';
 import '../styles/AddPayment.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,17 +14,44 @@ const AddPayment = () => {
         cardNumber: '',
         expiryDate: '',
         cvc: '',
-        defaultPayment: '',
+        defaultPayment: false,
     });
 
+    const dispatch = useDispatch();
+    const cards = useSelector(state => state.card.cards);
+
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        const { name, value, type, checked } = e.target;
+        setFormData({ 
+            ...formData, 
+            [name]: type === 'checkbox' ? checked : value 
+        });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Card Added!");
+        
+        //indexing the first digit of the card number form data 
+        const firstDigit = formData.cardNumber[0];
+        let cardType = 'Unknown';
+
+        if (firstDigit === '4') {
+            cardType = 'Visa';
+        } else if (firstDigit === '2' || firstDigit === '5') {
+            cardType = 'Mastercard';
+        } else if (firstDigit === '3') {
+            cardType = 'American Express';
+        } else {
+            cardType = 'Invalid card number';
+        }
+
+        const newCard = {
+            ...formData,
+            cardType,
+            last4: formData.cardNumber.slice(-4)
+        };
+
+        dispatch(addCard(newCard));
     };
 
     return (
@@ -34,7 +63,11 @@ const AddPayment = () => {
                     </div>
                     <div className="card-list">
                         <ul>
-                            <li className='card details'></li>
+                            {cards.map((card, index) => (
+                                <li key={index} className='card details'>
+                                    <FontAwesomeIcon icon={faCreditCard} /> {card.cardType} ending in {card.last4}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
