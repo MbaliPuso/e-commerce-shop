@@ -151,7 +151,7 @@ const ProductList = () => {
     );
 
     return (
-        <>
+        <div className='product-list'>
             <div className='container'>
                 <div className="search-bar mb-4 mx-auto justify-content-center" style={{ maxWidth: '50%' }}>
                     <label className="search-label" htmlFor="search">Search Item</label>
@@ -167,7 +167,7 @@ const ProductList = () => {
             <div className='row'>
                 {filteredProducts.length > 0 ? (
                 filteredProducts.map(product => (
-                    <div key={product.id} className='col-lg-3 col-md-12 col-sm-12 mb-4'>
+                    <div key={product.id} className='col-lg-3 col-md-3 col-sm-12 mb-4'>
                         <div className='card bg-transparent justify-content-center vw-60 border-0 bg-white' >
                             <img src={product.image} alt={product.name} className="card-image mx-auto d-block" height='230' width='190' onClick={() => handleItemView(product)} />
                             <div className="card-content d-flex flex-column">
@@ -192,7 +192,7 @@ const ProductList = () => {
                 )}
             </div>
         </div>
-        </>
+        </div>
     );
 };
 

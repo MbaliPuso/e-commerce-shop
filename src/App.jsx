@@ -1,3 +1,5 @@
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import ItemView from './pages/ItemView';
@@ -10,6 +12,7 @@ import './App.css';
 function App() {
   return (
     <>
+    <Provider store={store}>
      <BrowserRouter>
       <Routes>
         <Route path='/' element={<Dashboard />} />
@@ -19,7 +22,8 @@ function App() {
         <Route path='/add-payment' element={<AddPayment />} />
         <Route path='/add-address' element={<AddAddress />} />
       </Routes>
-     </BrowserRouter> 
+     </BrowserRouter>
+    </Provider> 
     </>
   );
 }

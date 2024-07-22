@@ -1,3 +1,8 @@
+.product-list {
+    display: flex;
+    flex: 1;
+}
+
 .search-label {
     font-size: 16px;
     font-weight: 400;
