@@ -4,7 +4,7 @@ import ProductDetails from '../components/ProductDetails';
 import Sidebag from '../components/Sidebag';
 import '../styles/ItemView.css';
 import { Row, Col, Container } from 'react-bootstrap';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const ItemView = () => {
     
