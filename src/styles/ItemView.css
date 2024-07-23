@@ -1,12 +1,9 @@
-.test{
-    border: 1px solid magenta;
+.ItemView{
+   position: relative;
+   top: 2rem;
+   left: 8rem;
 }
 
-.content{
-    position: absolute;
-    left: 80px;
-    top: 40px;
-}
 
 .contentTop{
     display: flex;
@@ -66,6 +63,7 @@ padding-bottom: 20px;
 
 .contentBottom hr{
     border: 2px solid black;
+
 }
 
 .contentBottom .description hr{
@@ -88,7 +86,7 @@ padding-bottom: 20px;
 }
 
 .contentTop .details .button {
-    margin-left: 60%;    
+    margin-left: 30%;    
     height: 30%;
 }
 
