@@ -78,21 +78,21 @@ const AddPayment = () => {
                     <form className='add-card-form' onSubmit={handleSubmit}>
                         <div className="form-group cardholder">
                             <label htmlFor="name" className='label-name'>Cardholder Name</label>
-                            <input type="text" name='cardHolderName' placeholder='John Maker' value={formData.cardHolderName} onChange={handleChange} className='form-control' required />
+                            <input type="text" name='cardHolderName' placeholder='John Maker' value={formData.cardHolderName} onChange={handleChange} className='form-control input-box' required />
                         </div>
                         <div className="form-group cardnumber">
                             <label htmlFor="number" className='label-name'>Card Number</label>
-                            <input type="number" name='cardNumber' placeholder='5126-5987-2214-7621' value={formData.cardNumber} onChange={handleChange} className='form-control' required />
+                            <input type="number" name='cardNumber' placeholder='5126-5987-2214-7621' value={formData.cardNumber} onChange={handleChange} className='form-control input-box' required />
                         </div>
                         <div className="form-group expiry-cvc">
                             <div className="row">
                                 <div className="col-4">
                                     <label htmlFor="date" className='label-name'>Expiry Date</label>
-                                    <input type="text" name='expiryDate' placeholder='MM/YYYY' value={formData.expiryDate} onChange={handleChange} className='form-control' required />
+                                    <input type="text" name='expiryDate' placeholder='MM/YYYY' value={formData.expiryDate} onChange={handleChange} className='form-control input-box' required />
                                 </div>
                                 <div className="col-3">
                                 <label htmlFor="cvc" className='label-name'>CVC</label>
-                                <input type="number" name='cvc' placeholder='123' value={formData.cvc} onChange={handleChange} className='form-control' required />
+                                <input type="number" name='cvc' placeholder='123' value={formData.cvc} onChange={handleChange} className='form-control input-box' required />
                                 </div>
                             </div>
                         </div>
